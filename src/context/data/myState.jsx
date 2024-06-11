@@ -21,7 +21,7 @@ function MyState(props) {
 
     const [loading, setLoading] = useState(false);
 
-    //*****************************currentuser***************************************************/
+    
     const [currentUser, setCurrentUser] = useState({})
     useEffect(()=>{
         const unsub = onAuthStateChanged(auth, (user)=>{
@@ -33,7 +33,7 @@ function MyState(props) {
         }
     },[])
 
-    //*******************************************************************************************/
+
 
     const [products, setProducts] = useState({
         title: null,
@@ -172,8 +172,7 @@ function MyState(props) {
     }
 
     const [user, setUser] = useState([]);
-    console.log(user);
-    console.log(user.name);
+   
 
     const getUserData = async () => {
         setLoading(true)
@@ -221,8 +220,8 @@ function MyState(props) {
             )
         
           })
-        //   addProduct-->addReview
-          // ********************** Add Product Section  **********************
+        
+          // ********************** Add Review Section  **********************
           const addReview  = async () => {
             if (reviews.name == null ||reviews.image == null || reviews.testimonial == null) {
               return toast.error('Please fill all fields')
@@ -274,8 +273,8 @@ function MyState(props) {
           useEffect(() => {
             getReviewData();
           }, []);
-/*        */
-        /***********************************************************************************************/
+
+        
         //Provide a context value to component tree
         return (
         <MyContext.Provider value={{

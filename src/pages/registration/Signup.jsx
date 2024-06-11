@@ -7,6 +7,8 @@ import { auth, fireDb, storage } from '../../firebase/FirebaseConfig';
 import { Timestamp, addDoc, collection } from 'firebase/firestore';
 import Loader from '../../components/loader/Loader';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
+import { FaCameraRetro } from "react-icons/fa6";
+
 
 function Signup() {
     const [displayName, setDisplayName] = useState("");
@@ -44,7 +46,7 @@ function Signup() {
                     });
 
                     const user = {
-                        displayName,
+                        user: displayName,
                         uid: users.user.uid,
                         email: users.user.email,
                         time: Timestamp.now()
@@ -108,19 +110,19 @@ function Signup() {
                         onChange={(e) => setProfileImage(e.target.files[0])}
                         id="file"
                     />
-                    <label htmlFor="file" className='bg-gray-600 text-white py-2 px-4 rounded-lg cursor-pointer'>
-                        Add Image
+                    <label htmlFor="file" className=' text-white rounded-lg cursor-pointer'>
+                    <p className=''><FaCameraRetro /> </p>
                     </label>
                 </div>
                 <div className='flex justify-center mb-3'>
                     <button
                         onClick={signup}
-                        className='bg-red-500 w-full text-white font-bold px-2 py-2 rounded-lg'>
+                        className='bg-red-500 w-full text-white font-bold px-2 py-2 mt-2 rounded-lg'>
                         Signup
                     </button>
                 </div>
                 <div>
-                    <h2 className='text-white'>Have an account <Link className='text-red-500 font-bold' to={'/login'}>Login</Link></h2>
+                    <h2 className='text-white'>Have an account? <Link className='text-red-500 font-bold' to={'/login'}>Login</Link></h2>
                 </div>
             </div>
         </div>
