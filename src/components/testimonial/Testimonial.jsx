@@ -25,8 +25,8 @@ function Testimonial() {
                                 <div className='flex'>
                                 <p ><img
                                 className='h-10 w-10 rounded-full'
-                                src={currentUser.photoURL} alt="CurrentUserImage" /></p>
-                                    <h3 className='flex justify-between text-gray-900 font-bold py-1 pl-6 title-font tracking-wider text-xl uppercase'>{currentUser.displayName}</h3> 
+                                src={image} alt="CurrentUserImage" /></p>
+                                    <h3 className='flex justify-between text-gray-900 font-bold py-1 pl-6 title-font tracking-wider text-xl uppercase'>{name}</h3> 
                                     </div>
                                 {/* <img alt="testimonial" className="w-50 h-50 mb-8 object-cover object-center  inline-block border-2 border-gray-200 bg-gray-700" src={image}/> */}
                                 {/* <h2 style={{ color: mode === 'dark' ? '#ff4162' : '' }} className="text-gray-900 font-medium title-font tracking-wider text-sm uppercase">{name}</h2> */}
