@@ -14,12 +14,12 @@ import { GrFavorite } from "react-icons/gr";
 
 
 function ProductInfo() {
-    // const [liked, setLiked] = useState(false)
+    
     const context = useContext(myContext);
     const { loading, setLoading } = context;
     const [products, setProducts] = useState('')
     const params = useParams()
-    // console.log(products.title)
+    
 
     const getProductData = async () => {
         setLoading(true)
@@ -60,13 +60,7 @@ function ProductInfo() {
 
 const [rating, setRating] = useState('unliked');
 
-// const ratingGiven = () => {
-//     if(rating === 'unliked'){
-//         setRating('liked')
-//         }else{
-//             setRating('unliked')
-//             }
-//             }
+
 
 const ratingGiven = (index) => {
     setRating(index + 1); // Set rating to the selected star (1-based index)

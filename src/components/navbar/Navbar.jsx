@@ -188,7 +188,7 @@ function Navbar() {
                     <img
                       className="inline-block w-10 h-10 rounded-full"
                       src={currentUser.photoURL}
-                      alt="Dan_Abromov" />
+                      alt={currentUser.displayName} />
                   </Link>
                 </div> : ""}
 
