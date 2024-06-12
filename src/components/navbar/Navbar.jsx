@@ -12,13 +12,14 @@ import { CiShop } from "react-icons/ci";
 function Navbar() {
   const context = useContext(myContext);
   const {mode, toggleMode, currentUser, } = context;
-  console.log(currentUser.displayName);
-  console.log(currentUser);
+  // console.log(currentUser.displayName);
+  // console.log(currentUser);
   
 
   const [open, setOpen] = useState(false)
 
   const user = JSON.parse(localStorage.getItem('user'));
+  // console.log(user);
   
 
 
@@ -98,7 +99,7 @@ function Navbar() {
                   </div>}
      
                      
-                     { user ? <div className="flow-root">
+                      { user ? <div className="flow-root">
                       <Link to={'/'} className="-m-2 block p-2 font-medium text-gray-900 cursor-pointer">
                         <img
                           className="inline-block w-10 h-10 rounded-full"
@@ -106,7 +107,9 @@ function Navbar() {
                           alt={currentUser.displayName }
                         />
                       </Link>
-                    </div>: "" }
+                    </div>: "" } 
+                
+
                   
                 </div>
 
@@ -175,14 +178,14 @@ function Navbar() {
                   </a> : ""}
                 </div>
 
-                <div className="hidden lg:ml-8 lg:flex">
+               { user ? <div className="hidden lg:ml-8 lg:flex">
                   <a href="#" className="flex items-center text-gray-700 ">
                     <img
                       className="inline-block w-10 h-10 rounded-full"
                       src={currentUser.photoURL}
                       alt="Dan_Abromov" />
                   </a>
-                </div>
+                </div> : ""}
 
                 <div className="flex lg:ml-6">
                   <button className='' onClick={toggleMode}>

@@ -23,15 +23,15 @@ function MyState(props) {
 
     
     const [currentUser, setCurrentUser] = useState({})
-    useEffect(()=>{
+    // useEffect(()=>{
         const unsub = onAuthStateChanged(auth, (user)=>{
             setCurrentUser(user);
             console.log(user);
         });
-        return ()=>{
-            unsub()
-        }
-    },[])
+        // return ()=>{
+        //     unsub()
+        // }
+    // },[])
 
 
 
