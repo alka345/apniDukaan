@@ -184,12 +184,12 @@ function Navbar() {
                 </div>
 
                { user ? <div className="hidden lg:ml-8 lg:flex">
-                  <a href="#" className="flex items-center text-gray-700 ">
+                  <Link to="/" className="flex items-center text-gray-700 ">
                     <img
                       className="inline-block w-10 h-10 rounded-full"
                       src={currentUser.photoURL}
                       alt="Dan_Abromov" />
-                  </a>
+                  </Link>
                 </div> : ""}
 
                 <div className="flex lg:ml-6">
