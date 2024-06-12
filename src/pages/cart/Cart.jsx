@@ -24,6 +24,7 @@ function Cart() {
     toast.success("Delete cart")
   }
 
+
   useEffect(() => {
     localStorage.setItem('cart', JSON.stringify(cartItems));
   }, [cartItems])
@@ -45,7 +46,7 @@ function Cart() {
   // console.log(grandTotal)
 
   /**========================================================================
-   *!                           Payment Intigration
+   *!                           Payment Integration
    *========================================================================**/ 
 
   const [name, setName] = useState("")
@@ -141,6 +142,7 @@ function Cart() {
           <div className="rounded-lg md:w-2/3 ">
             {cartItems.map((item, index) => {
               const { title, price, description, imageUrl } = item;
+   
               return (
                 <div className="justify-between mb-6 rounded-lg border  drop-shadow-xl bg-white p-6  sm:flex  sm:justify-start" style={{ backgroundColor: mode === 'dark' ? 'rgb(32 33 34)' : '', color: mode === 'dark' ? 'white' : '', }}>
                   <img src={imageUrl} alt="product-image" className="w-full rounded-lg sm:w-40" />
