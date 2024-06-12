@@ -146,9 +146,14 @@ function Navbar() {
                 <Link to={'/'} className='flex'>
                   <div className="flex ">
                     <h1 className=' text-2xl font-bold text-black  px-2 py-1 rounded' style={{ color: mode === 'dark' ? 'white' : '', }}>
-                   <h3 className=' font-mono font-normal hidden lg:block'>
-                     <span className='flex mx-auto pl-6  pr-2 leading-none'><CiShop /></span>
-                   <p >ApnaDukaan</p>
+                   <h3 className='flex font-mono font-normal '>
+                     <span className='flex mx-auto pl-6 mb-0 pr-2 leading-none'>
+                      <img 
+                      src="/store.png"
+                      className='h-8 w-8'
+                      alt="" />
+                      </span>
+                   <p className='hidden lg:block'>𝒶𝓅𝓃𝒶Dukaan</p>
                    </h3>
                    </h1>
                   </div>
