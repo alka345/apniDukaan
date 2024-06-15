@@ -21,8 +21,6 @@ function Navbar() {
   const user = JSON.parse(localStorage.getItem('user'));
   // console.log(user);
   
-
-
   const logout = () => {
     localStorage.clear('user');
     window.location.href = '/login'

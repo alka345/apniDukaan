@@ -6,6 +6,7 @@ import { toast } from 'react-toastify'
 
 function ProductCard() {
     const context = useContext(myContext)
+
     const { mode, product ,searchkey, setSearchkey,filterType,setFilterType,
         filterPrice,setFilterPrice} = context
 
@@ -44,7 +45,6 @@ function ProductCard() {
                                     <div className="p-5 border-t-2">
                                         <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1" style={{ color: mode === 'dark' ? 'white' : '', }}>apnaDukaan</h2>
                                         <h1 className="title-font text-lg font-medium text-gray-900 mb-3" style={{ color: mode === 'dark' ? 'white' : '', }}>{title}</h1>
-                                        {/* <p className="leading-relaxed mb-3">{item.description.}</p> */}
                                         <p className="leading-relaxed mb-3" style={{ color: mode === 'dark' ? 'white' : '' }}>₹{price}</p>
                                         <div className=" flex justify-center">
                                             <button type="button" 
