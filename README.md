@@ -1,7 +1,7 @@
 # apnaDukaan - an eCommerce Project <br/>
 This is an e-commerce platform for different products made using React, Tailwind CSS, React-Router, Firebase for the backend, React-Toastify, and Razorpay payment integration
 <br/>
-#Home Page <br/>
+[#Home Page] <br/>
 The home/landing page shows a search bar and allows users to filter/sort products based on price and category. It displays the latest collection with some of the products. It also contains testimonials from customers, and customers can post their own reviews
 <br/>
 #Product Listing Page <br/>
