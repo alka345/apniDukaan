@@ -4,13 +4,13 @@ This is an e-commerce platform for different products made using React, Tailwind
 [!Home Page] <br/>
 The home/landing page shows a search bar and allows users to filter/sort products based on price and category. It displays the latest collection with some of the products. It also contains testimonials from customers, and customers can post their own reviews
 <br/>
-#Product Listing Page <br/>
+# Product Listing Page <br/>
 The product listing page shows all the products along with a filter/sort section
 <br/>
-#ProductInfo page <br/>
+# ProductInfo page <br/>
 The product detail page shows the details of a product and includes a button to add the product to the cart. Users can also rate the product based on their preference
 <br/>
-#Filter/Sort </br>
+# Filter/Sort </br>
 On the product listing page, users can filter the products based on category and price. There is also a facility to reset filters when needed.
 <br/>
 #Search <br/>
