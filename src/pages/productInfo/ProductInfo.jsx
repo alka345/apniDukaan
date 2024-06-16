@@ -58,7 +58,7 @@ function ProductInfo() {
         localStorage.setItem('cart', JSON.stringify(cartItems));
     }, [cartItems])
 
-const [rating, setRating] = useState('unliked');
+const [rating, setRating] = useState('');
 
 
 

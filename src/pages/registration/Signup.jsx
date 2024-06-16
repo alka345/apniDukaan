@@ -120,7 +120,10 @@ function Signup() {
                         className='bg-red-500 w-full text-white font-bold px-2 py-2 mt-2 rounded-lg'>
                         Signup
                     </button>
+                    <br />
+        
                 </div>
+              
                 <div>
                     <h2 className='text-white'>Have an account? <Link className='text-red-500 font-bold' to={'/login'}>Login</Link></h2>
                 </div>

@@ -3,6 +3,11 @@ import myContext from '../../context/data/myContext'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart } from '../../redux/CartSlice'
 import { toast } from 'react-toastify'
+import { addToWishlist } from '../../redux/WishlistSlice'
+// import { GrFavorite } from "react-icons/gr";
+import { AiOutlineHeart } from "react-icons/ai";
+import { GrEbay } from 'react-icons/gr'
+// import { FcLike } from "react-icons/fc";
 
 function ProductCard() {
     const context = useContext(myContext)
@@ -12,6 +17,7 @@ function ProductCard() {
 
     const dispatch = useDispatch()
     const cartItems = useSelector((state)=> state.cart);
+    const wishlistItems = useSelector((state)=> state.wishlist);
     console.log(cartItems)
 
     const addCart = (product)=> {
@@ -19,10 +25,17 @@ function ProductCard() {
         toast.success('add to cart');
 
     }
+    const addWishlist = (product)=> {
+        dispatch(addToWishlist(product));
+        toast.success('add to wishlist');
+
+    }
 
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cartItems));
-    }, [cartItems])
+        localStorage.setItem('wishlist', JSON.stringify(wishlistItems));
+    }, [cartItems, wishlistItems])
+    
     return (
         <section className="text-gray-600 body-font">
             <div className="container px-5 py-8 md:py-16 mx-auto">
@@ -40,7 +53,12 @@ function ProductCard() {
                             <div    key={index} className="p-4 md:w-1/4  drop-shadow-lg " >
                                 <div  className="h-full border-2 hover:shadow-gray-100 hover:shadow-2xl transition-shadow duration-300 ease-in-out    border-gray-200 border-opacity-60 rounded-2xl overflow-hidden" style={{ backgroundColor: mode === 'dark' ? 'rgb(46 49 55)' : '', color: mode === 'dark' ? 'white' : '', }} >
                                     <div onClick={()=> window.location.href = `/productinfo/${id}`} className="flex justify-center cursor-pointer" >
-                                        <img className=" rounded-2xl w-full h-80 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out" src={imageUrl} alt="blog" />
+                                        <img className="relative rounded-2xl w-full h-80 p-2 hover:scale-110 transition-scale-110  duration-300 ease-in-out" src={imageUrl} alt="blog" />
+                                        <button type="button" 
+                                          onClick={()=>addWishlist(item)}
+                                            // onClick={(event) => addWishlist(item, event)}
+                                            className="absolute mt-8 ml-32"><AiOutlineHeart size={25}
+                                            /></button>
                                     </div>
                                     <div className="p-5 border-t-2">
                                         <h2 className="tracking-widest text-xs title-font font-medium text-gray-400 mb-1" style={{ color: mode === 'dark' ? 'white' : '', }}>apnaDukaan</h2>
@@ -50,6 +68,7 @@ function ProductCard() {
                                             <button type="button" 
                                             onClick={()=> addCart(item)}
                                             className="focus:outline-none text-white bg-pink-600 hover:bg-pink-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm w-full  py-2">Add To Cart</button>
+                                           
 
                                         </div>
                                     </div>
@@ -59,11 +78,7 @@ function ProductCard() {
                         )
                     })}
 
-
-
-
                 </div>
-
             </div>
         </section >
 

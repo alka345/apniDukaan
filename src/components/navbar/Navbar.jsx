@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState } from 'react'
+import React, { Fragment, useContext, useEffect, useState } from 'react'
 import myContext from '../../context/data/myContext';
 import { BsFillCloudSunFill } from 'react-icons/bs'
 import { FiSun } from 'react-icons/fi'
@@ -7,6 +7,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { RxCross2 } from 'react-icons/rx'
 import { useSelector } from 'react-redux';
 import { CiShop } from "react-icons/ci";
+import { GrFavorite } from "react-icons/gr";
 
 
 function Navbar() {
@@ -19,7 +20,9 @@ function Navbar() {
   const [open, setOpen] = useState(false)
 
   const user = JSON.parse(localStorage.getItem('user'));
-  // console.log(user);
+  console.log(user);
+  // console.log(user.user.displayName);
+  // console.log(user.user.photoURL);
   
   const logout = () => {
     localStorage.clear('user');
@@ -27,6 +30,12 @@ function Navbar() {
   }
 
   const cartItems = useSelector((state) => state.cart)
+  const wishlistItems = useSelector((state) => state.wishlist)
+
+//   useEffect(() => {
+//     localStorage.setItem('cart', JSON.stringify(cartItems));
+//     localStorage.setItem('wishlist', JSON.stringify(wishlistItems));
+// }, [cartItems, wishlistItems])
  
 
   return (
@@ -106,6 +115,7 @@ function Navbar() {
                         <img
                           className="inline-block w-10 h-10 rounded-full"
                           src={currentUser.photoURL}
+                          // src={user.photoURL}
                           alt={currentUser.displayName }
                         />
                       </Link>
@@ -216,6 +226,20 @@ function Navbar() {
                     </svg>
 
                     <span className="ml-2 text-sm font-medium text-gray-700 group-" style={{ color: mode === 'dark' ? 'white' : '', }}>{cartItems.length}</span>
+                    <span className="sr-only">items in cart, view bag</span>
+                  </Link>
+                </div>
+                {/* WIShlist */}
+                <div className="ml-4 flow-root lg:ml-6">
+                  <Link to={'/wishlist'} className="group -m-2 flex items-center p-2" style={{ color: mode === 'dark' ? 'white' : '', }}>
+                    {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                    </svg> */}
+
+                    <GrFavorite />
+                      
+
+                    <span className="ml-2 text-sm font-medium text-gray-700 group-" style={{ color: mode === 'dark' ? 'white' : '', }}>{wishlistItems.length}</span>
                     <span className="sr-only">items in cart, view bag</span>
                   </Link>
                 </div>

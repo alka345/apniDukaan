@@ -22,6 +22,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import AllProducts from './pages/allProducts/AllProducts'
 import AddTestimonial from './components/testimonial/AddTestimonial';
 import Testimonial from './components/testimonial/Testimonial';
+import Wishlist from './pages/wishlist/Wishlist';
 
 function App() {
   return (
@@ -40,6 +41,11 @@ function App() {
           <Route path="/cart" element={
              <ProtectedRoute>
               <Cart />
+             </ProtectedRoute>
+           } />
+          <Route path="/wishlist" element={
+             <ProtectedRoute>
+              <Wishlist />
              </ProtectedRoute>
            } />
           <Route path="/dashboard" element={
